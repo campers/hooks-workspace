@@ -1,0 +1,18 @@
+[
+  {
+    "session_id": "fixture-id-3",
+    "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-3.jsonl",
+    "cwd": "/fixture/project",
+    "hook_event_name": "SessionStart",
+    "source": "startup"
+  },
+  {
+    "session_id": "fixture-id-3",
+    "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-3.jsonl",
+    "cwd": "/fixture/project",
+    "prompt_id": "fixture-id-4",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "Fixture prompt blocked before model access."
+  }
+]

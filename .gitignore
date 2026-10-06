@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env*
+!.env.example
+playwright-report/
+test-results/
+
+.hooks-workspace/state/
+.codex/hooks/state/
+.claude/settings.local.json

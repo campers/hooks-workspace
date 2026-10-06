@@ -1,0 +1,21 @@
+[
+  {
+    "session_id": "fixture-id-1",
+    "transcript_path": null,
+    "cwd": "/fixture/project",
+    "hook_event_name": "SessionStart",
+    "model": "fixture-model",
+    "permission_mode": "bypassPermissions",
+    "source": "startup"
+  },
+  {
+    "session_id": "fixture-id-1",
+    "turn_id": "fixture-id-2",
+    "transcript_path": null,
+    "cwd": "/fixture/project",
+    "hook_event_name": "UserPromptSubmit",
+    "model": "fixture-model",
+    "permission_mode": "bypassPermissions",
+    "prompt": "Fixture prompt blocked before model access."
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "cwd": "/fixture/project",
+      "hooks": [
+        {
+          "key": "/fixture/project/.codex/hooks.json:session_start:0:0",
+          "eventName": "sessionStart",
+          "handlerType": "command",
+          "command": "\"/fixture/node\" \"/fixture/project/capture.cjs\"",
+          "async": false,
+          "matcher": null,
+          "timeoutSec": 600,
+          "statusMessage": null,
+          "additionalContextLimit": null,
+          "sourcePath": "/fixture/project/.codex/hooks.json",
+          "source": "project",
+          "pluginId": null,
+          "displayOrder": 0,
+          "enabled": true,
+          "isManaged": false,
+          "currentHash": "sha256:c9919f853b2edc71bca6bf18284e3bc9637045d0a42f19780613fe1dea45dcf4",
+          "trustStatus": "untrusted"
+        },
+        {
+          "key": "/fixture/project/.codex/hooks.json:user_prompt_submit:0:0",
+          "eventName": "userPromptSubmit",
+          "handlerType": "command",
+          "command": "\"/fixture/node\" \"/fixture/project/capture.cjs\"",
+          "async": false,
+          "matcher": null,
+          "timeoutSec": 600,
+          "statusMessage": null,
+          "additionalContextLimit": null,
+          "sourcePath": "/fixture/project/.codex/hooks.json",
+          "source": "project",
+          "pluginId": null,
+          "displayOrder": 1,
+          "enabled": true,
+          "isManaged": false,
+          "currentHash": "sha256:155ec96f8f61ec9cbe7c866728c202d4fc9cba0b93bc76ac6e7e8e1bfd32f35c",
+          "trustStatus": "untrusted"
+        }
+      ],
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

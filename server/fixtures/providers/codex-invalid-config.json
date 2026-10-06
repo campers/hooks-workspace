@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "cwd": "/fixture/project",
+      "hooks": [],
+      "warnings": [
+        "failed to parse hooks config /fixture/project/.codex/hooks.json: key must be a string at line 1 column 2"
+      ],
+      "errors": []
+    }
+  ]
+}

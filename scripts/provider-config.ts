@@ -1,0 +1,13 @@
+import { observationEvents } from '../runtime/observer.js';
+import { parseArgs } from 'node:util';
+import { resolve, dirname } from 'node:path';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { resolveRegistry } from '../server/registry.js';
+const { values } = parseArgs({ options: { project: { type: 'string' }, provider: { type: 'string' }, registry: { type: 'string' } } });
+if (!values.project || (values.provider !== 'codex' && values.provider !== 'claude')) throw new Error('Specify --project and --provider codex|claude');
+const project = realpathSync(resolve(values.project));
+const registry = resolveRegistry(project, values.registry);
+const quote = (value: string) => "'" + value.replaceAll("'", "'\\''") + "'";
+const command = [process.execPath, fileURLToPath(import.meta.resolve('tsx/cli')), resolve(dirname(fileURLToPath(import.meta.url)), 'dispatch-hook.ts'), '--project', project, '--provider', values.provider, '--registry', registry].map(quote).join(' ');
+console.log(JSON.stringify({ hooks: Object.fromEntries(['SessionStart','UserPromptSubmit','PreToolUse','PostToolUse','Stop',...observationEvents[values.provider]].map(event => [event, [{ hooks: [{ type: 'command', command, timeout: 30 }] }]])) }, null, 2));

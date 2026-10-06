@@ -1,0 +1,31 @@
+version: 1
+events:
+  - id: Stop
+    label: Stop
+    description: Checks completed before the agent finishes.
+hooks:
+  - id: demo-review
+    label: Review completed work
+    event: Stop
+    stage: blocker
+    order: 10
+    enabled:
+      mode: opt-out
+      environment: DEMO_REVIEW
+    when: The agent is about to finish.
+    does: Illustrates a review gate in a portable project.
+    why: Make the review decision and recorded result visible.
+    calls: []
+    canBlock: true
+    failurePolicy: fail-open
+    source: .codex/hooks/review.cjs
+    sdlcGates: []
+    inputs: [Latest work summary]
+    checks: [Review evidence is present]
+    outcomes: [passed, blocked]
+    rules: [This example is illustrative and is never executed by the inspector.]
+    steps: [Read the summary, Record the decision]
+    references:
+      - type: documentation
+        label: Demo project
+        path: README.md

@@ -1,0 +1,50 @@
+{
+  "name": "hooks-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "tsx server/main.ts --dev",
+    "start": "tsx server/main.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test server/*.test.ts",
+    "build": "pnpm typecheck && vite build",
+    "check": "pnpm typecheck && pnpm test && vite build",
+    "test:browser": "node --import tsx scripts/browser-smoke.ts",
+    "dispatch": "tsx scripts/dispatch-hook.ts",
+    "fixtures:capture": "node scripts/capture-provider-fixtures.mjs",
+    "config": "tsx scripts/provider-config.ts",
+    "test:native": "node --import tsx scripts/native-lifecycle-smoke.mjs",
+    "test:discovery": "node --import tsx scripts/discovery-smoke.ts"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12.10.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "js-yaml": "^4.1.1",
+    "lucide-react": "^0.453.0",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwind-merge": "^3.3.1",
+    "tsx": "^4.20.6",
+    "@anthropic-ai/claude-agent-sdk": "0.3.291"
+  },
+  "devDependencies": {
+    "@openai/codex-sdk": "0.160.1",
+    "@playwright/test": "^1.55.0",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.18.8",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "tailwindcss": "^4.2.4",
+    "tw-animate-css": "^1.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.0"
+  },
+  "packageManager": "pnpm@10.28.1"
+}

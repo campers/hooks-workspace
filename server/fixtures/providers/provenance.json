@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-06T07:21:25.040Z",
+  "binaries": {
+    "codex": "codex-cli 0.160.0",
+    "claude": "2.1.285 (Claude Code)"
+  },
+  "transport": {
+    "codexDiscovery": "app-server stdio hooks/list",
+    "codexExecution": "exec --json",
+    "claudeExecution": "-p --output-format stream-json"
+  },
+  "evidence": "Real CLI discovery and command-hook execution with synthetic prompt and hook script",
+  "modelRequests": 0,
+  "scope": [
+    "SessionStart",
+    "UserPromptSubmit"
+  ],
+  "dispatcherVerified": true,
+  "codexTrustBypassedForExecution": true,
+  "codexTrustBypassedForDiscovery": false,
+  "claudeSettingSources": [
+    "project"
+  ],
+  "cliExitCodes": {
+    "codex": 0,
+    "claude": 0
+  },
+  "transformations": [
+    "Temporary root replaced with /fixture",
+    "Executable path replaced with /fixture/node",
+    "UUIDs replaced with stable capture-local identifiers",
+    "Claude init inventory omitted",
+    "Raw stderr excluded"
+  ],
+  "sdkVersionsInspected": {
+    "@openai/codex-sdk": "0.160.1",
+    "@anthropic-ai/claude-agent-sdk": "0.3.291"
+  },
+  "sdkVersionsSource": "Published package types inspected on 2026-10-06; these captures use the listed CLI binaries",
+  "fileDigests": {
+    "codex-discovery.json": "9077be1370385ce0ec81905832ebbc5db6ebbb5b28a979b6a17a40ac7939242f",
+    "codex-invalid-config.json": "92263c73fdf274bce8a0ee8bcb24589c591384a9764e1ef89b09b6cf4c90be83",
+    "codex-inputs.json": "d7a572ca1eedc4822bcd4e6121942ddbc92d6580896f628a606ae6dd2d2bd40e",
+    "claude-inputs.json": "904d1688877beeac52fd9156581a6fc6f4fcec915436cc33d1bb67db8be1f109",
+    "codex-blocked-turn.json": "1b53be6e429af4027d282b9d4f1bc89384693f4bc060687057e559a0fccd24e2",
+    "claude-blocked-turn.json": "cb54c281887920f5ffc41c27224d352a7c84ba04704b9312bee9b0781167bd7a",
+    "dispatcher-runs.json": "63b7fb28fd4bc8da2bdb2f34e7ca261c517aaa457fb28e6303e335795ba7014c"
+  }
+}

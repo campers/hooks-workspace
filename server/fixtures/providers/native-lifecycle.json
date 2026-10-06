@@ -1,0 +1,2390 @@
+[
+  {
+    "provider": "claude",
+    "configEvents": [
+      "SessionStart",
+      "UserPromptSubmit",
+      "PreToolUse",
+      "PostToolUse",
+      "Stop",
+      "SessionEnd",
+      "SubagentStart",
+      "SubagentStop",
+      "CwdChanged",
+      "DirectoryAdded"
+    ],
+    "observedEvents": [
+      "SessionEnd"
+    ],
+    "discovery": {
+      "sessionFound": true,
+      "cwd": "/fixture/claude-project",
+      "transcriptRead": true
+    },
+    "postToolEvidence": {
+      "feedbackPresent": true,
+      "originalOutputPresent": true
+    },
+    "version": "2.1.285 (Claude Code)",
+    "permissionMode": "default",
+    "codexHookTrustBypassed": false,
+    "transport": "native CLI command hooks",
+    "model": "scripted loopback SSE; no remote model",
+    "rounds": 4,
+    "deniedSentinelAbsent": true,
+    "allowedSentinelPresent": true,
+    "inputs": [
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "hook_event_name": "SessionStart",
+        "source": "startup",
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-2",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "prompt_id": "fixture-id-3",
+        "permission_mode": "default",
+        "hook_event_name": "UserPromptSubmit",
+        "prompt": "Run the fixture commands, then finish.",
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-4",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "prompt_id": "fixture-id-3",
+        "permission_mode": "default",
+        "effort": {
+          "level": "high"
+        },
+        "hook_event_name": "PreToolUse",
+        "tool_name": "Bash",
+        "tool_input": {
+          "command": "'/fixture/node' -e 'require('\\''node:fs'\\'').writeFileSync(\"/fixture/claude-project/denied-sentinel\",'\\''fixture'\\'');console.log('\\''ORIGINAL_TOOL_OUTPUT'\\'')'"
+        },
+        "tool_use_id": "tool_1",
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-5",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "prompt_id": "fixture-id-3",
+        "permission_mode": "default",
+        "effort": {
+          "level": "high"
+        },
+        "hook_event_name": "PreToolUse",
+        "tool_name": "Bash",
+        "tool_input": {
+          "command": "'/fixture/node' -e 'require('\\''node:fs'\\'').writeFileSync(\"/fixture/claude-project/allowed-sentinel\",'\\''fixture'\\'');console.log('\\''ORIGINAL_TOOL_OUTPUT'\\'')'"
+        },
+        "tool_use_id": "tool_2",
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-6",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "prompt_id": "fixture-id-3",
+        "permission_mode": "default",
+        "effort": {
+          "level": "high"
+        },
+        "hook_event_name": "PostToolUse",
+        "tool_name": "Bash",
+        "tool_input": {
+          "command": "'/fixture/node' -e 'require('\\''node:fs'\\'').writeFileSync(\"/fixture/claude-project/allowed-sentinel\",'\\''fixture'\\'');console.log('\\''ORIGINAL_TOOL_OUTPUT'\\'')'"
+        },
+        "tool_response": {
+          "stdout": "ORIGINAL_TOOL_OUTPUT",
+          "stderr": "",
+          "interrupted": false,
+          "isImage": false,
+          "noOutputExpected": false
+        },
+        "tool_use_id": "tool_2",
+        "duration_ms": 109,
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-7",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "prompt_id": "fixture-id-3",
+        "permission_mode": "default",
+        "effort": {
+          "level": "high"
+        },
+        "hook_event_name": "Stop",
+        "stop_hook_active": false,
+        "last_assistant_message": "Fixture completed.",
+        "background_tasks": [],
+        "session_crons": [],
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-8",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-1",
+        "transcript_path": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+        "cwd": "/fixture/claude-project",
+        "prompt_id": "fixture-id-3",
+        "permission_mode": "default",
+        "effort": {
+          "level": "high"
+        },
+        "hook_event_name": "Stop",
+        "stop_hook_active": true,
+        "last_assistant_message": "Fixture completed.",
+        "background_tasks": [],
+        "session_crons": [],
+        "hooks_workspace": {
+          "provider": "claude",
+          "invocationId": "fixture-id-9",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      }
+    ],
+    "ledger": [
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:30.872Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-2",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "SessionStart",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:30.910Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-2",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "SessionStart",
+        "hookEventName": "SessionStart",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": null,
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 38
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:30.910Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-2",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "SessionStart",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.080Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-4",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "UserPromptSubmit",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.116Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-4",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "UserPromptSubmit",
+        "hookEventName": "UserPromptSubmit",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 36
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.116Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-4",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "UserPromptSubmit",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.297Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-5",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_1",
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.334Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [
+            "denyTool"
+          ],
+          "applied": [
+            "denyTool"
+          ],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": "deny",
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-5",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "PreToolUse",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_1",
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "blocked",
+        "durationMs": 37
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.334Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-5",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_1",
+        "kind": "completed",
+        "decision": "blocked"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.482Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-6",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_2",
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.517Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-6",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "PreToolUse",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_2",
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 35
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.517Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-6",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_2",
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.767Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-7",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PostToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_2",
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.802Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [
+            "feedback"
+          ],
+          "applied": [
+            "feedback"
+          ],
+          "nativeDecision": {
+            "decision": "block",
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-7",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "PostToolUse",
+        "hookEventName": "PostToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_2",
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "blocked",
+        "durationMs": 35
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.802Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-7",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PostToolUse",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": "tool_2",
+        "kind": "completed",
+        "decision": "blocked"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.947Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-8",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.985Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [
+            "continueStop"
+          ],
+          "applied": [
+            "continueStop"
+          ],
+          "nativeDecision": {
+            "decision": "block",
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-8",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "Stop",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "blocked",
+        "durationMs": 38
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:31.985Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-8",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "blocked"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.127Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-9",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.163Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-9",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "Stop",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 36
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.163Z",
+        "provider": "claude",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-9",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-1",
+        "turnId": null,
+        "promptId": "fixture-id-3",
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "at": "2026-10-06T08:53:32.292Z",
+        "provider": "claude",
+        "invocationId": "fixture-id-10",
+        "hookName": "dispatcher",
+        "kind": "observed",
+        "decision": "observed",
+        "hookEventName": "SessionEnd",
+        "sessionId": "fixture-id-1",
+        "context": {
+          "hookProject": "/fixture/claude-project",
+          "cwd": "/fixture/claude-project",
+          "transcriptPath": "/fixture/claude-home/projects/fixture-project/fixture-id-1.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:c3b60dcac3e31cfe6a99cbe1",
+            "repositoryLabel": "claude-project",
+            "checkout": "/fixture/claude-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        }
+      }
+    ]
+  },
+  {
+    "provider": "codex",
+    "configEvents": [
+      "SessionStart",
+      "UserPromptSubmit",
+      "PreToolUse",
+      "PostToolUse",
+      "Stop",
+      "SessionEnd",
+      "SubagentStart",
+      "SubagentStop"
+    ],
+    "observedEvents": [
+      "SessionEnd"
+    ],
+    "discovery": {
+      "sessionFound": true,
+      "cwd": "/fixture/codex-project",
+      "transcriptRead": true
+    },
+    "postToolEvidence": {
+      "feedbackPresent": true,
+      "originalOutputPresent": true
+    },
+    "version": "codex-cli 0.160.0",
+    "permissionMode": "workspace-write sandbox",
+    "codexHookTrustBypassed": true,
+    "transport": "native CLI command hooks",
+    "model": "scripted loopback SSE; no remote model",
+    "rounds": 4,
+    "deniedSentinelAbsent": true,
+    "allowedSentinelPresent": true,
+    "inputs": [
+      {
+        "session_id": "fixture-id-11",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "SessionStart",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "source": "startup",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-12",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-11",
+        "turn_id": "fixture-id-13",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "UserPromptSubmit",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "prompt": "Run the fixture commands, then finish.",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-14",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-11",
+        "turn_id": "fixture-id-13",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "PreToolUse",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "tool_name": "Bash",
+        "tool_input": {
+          "command": "'/fixture/node' -e 'require('\\''node:fs'\\'').writeFileSync(\"/fixture/codex-project/denied-sentinel\",'\\''fixture'\\'');console.log('\\''ORIGINAL_TOOL_OUTPUT'\\'')'"
+        },
+        "tool_use_id": "call_1",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-15",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-11",
+        "turn_id": "fixture-id-13",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "PreToolUse",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "tool_name": "Bash",
+        "tool_input": {
+          "command": "'/fixture/node' -e 'require('\\''node:fs'\\'').writeFileSync(\"/fixture/codex-project/allowed-sentinel\",'\\''fixture'\\'');console.log('\\''ORIGINAL_TOOL_OUTPUT'\\'')'"
+        },
+        "tool_use_id": "call_2",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-16",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-11",
+        "turn_id": "fixture-id-13",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "PostToolUse",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "tool_name": "Bash",
+        "tool_input": {
+          "command": "'/fixture/node' -e 'require('\\''node:fs'\\'').writeFileSync(\"/fixture/codex-project/allowed-sentinel\",'\\''fixture'\\'');console.log('\\''ORIGINAL_TOOL_OUTPUT'\\'')'"
+        },
+        "tool_response": "ORIGINAL_TOOL_OUTPUT\n",
+        "tool_use_id": "call_2",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-17",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-11",
+        "turn_id": "fixture-id-13",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "Stop",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "stop_hook_active": false,
+        "last_assistant_message": "Fixture completed.",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-18",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      },
+      {
+        "session_id": "fixture-id-11",
+        "turn_id": "fixture-id-13",
+        "transcript_path": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+        "cwd": "/fixture/codex-project",
+        "hook_event_name": "Stop",
+        "model": "fixture-model",
+        "permission_mode": "bypassPermissions",
+        "stop_hook_active": true,
+        "last_assistant_message": "Fixture completed.",
+        "hooks_workspace": {
+          "provider": "codex",
+          "invocationId": "fixture-id-19",
+          "revision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc"
+        }
+      }
+    ],
+    "ledger": [
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.691Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-12",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "SessionStart",
+        "sessionId": "fixture-id-11",
+        "turnId": null,
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.727Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-12",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "SessionStart",
+        "hookEventName": "SessionStart",
+        "sessionId": "fixture-id-11",
+        "turnId": null,
+        "promptId": null,
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 36
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.727Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-12",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "SessionStart",
+        "sessionId": "fixture-id-11",
+        "turnId": null,
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.869Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-14",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "UserPromptSubmit",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.907Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-14",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "UserPromptSubmit",
+        "hookEventName": "UserPromptSubmit",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 38
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:32.907Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-14",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "UserPromptSubmit",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.062Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-15",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_1",
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.100Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [
+            "denyTool"
+          ],
+          "applied": [
+            "denyTool"
+          ],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": "deny",
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-15",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "PreToolUse",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_1",
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "blocked",
+        "durationMs": 38
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.100Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-15",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_1",
+        "kind": "completed",
+        "decision": "blocked"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.249Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-16",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_2",
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.286Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-16",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "PreToolUse",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_2",
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 37
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.286Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-16",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PreToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_2",
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.516Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-17",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PostToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_2",
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.554Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [
+            "feedback"
+          ],
+          "applied": [
+            "feedback"
+          ],
+          "nativeDecision": {
+            "decision": "block",
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-17",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "PostToolUse",
+        "hookEventName": "PostToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_2",
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "blocked",
+        "durationMs": 38
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.554Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-17",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "PostToolUse",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": "call_2",
+        "kind": "completed",
+        "decision": "blocked"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.702Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-18",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.739Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [
+            "continueStop"
+          ],
+          "applied": [
+            "continueStop"
+          ],
+          "nativeDecision": {
+            "decision": "block",
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-18",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "Stop",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "blocked",
+        "durationMs": 37
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.739Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-18",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "blocked"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.883Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-19",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "started",
+        "decision": "started"
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.919Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "effectSummary": {
+          "requested": [],
+          "applied": [],
+          "nativeDecision": {
+            "decision": null,
+            "permissionDecision": null,
+            "endProcessing": false
+          }
+        },
+        "invocationId": "fixture-id-19",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "Stop",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "stage": "blocker",
+        "kind": "completed",
+        "decision": "passed",
+        "durationMs": 35
+      },
+      {
+        "schemaVersion": 2,
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        },
+        "at": "2026-10-06T08:53:33.919Z",
+        "provider": "codex",
+        "providerVersion": null,
+        "versionReason": "Live executable version not supplied by native hook payload",
+        "transport": "native-command",
+        "invocationId": "fixture-id-19",
+        "registryRevision": "79bba6c6c6c70ce9210fa4541800bf1a1907857b7260aae2d67c85181a31d5cc",
+        "hookName": "dispatcher",
+        "hookEventName": "Stop",
+        "sessionId": "fixture-id-11",
+        "turnId": "fixture-id-13",
+        "promptId": null,
+        "toolUseId": null,
+        "kind": "completed",
+        "decision": "passed"
+      },
+      {
+        "schemaVersion": 2,
+        "at": "2026-10-06T08:53:34.047Z",
+        "provider": "codex",
+        "invocationId": "fixture-id-20",
+        "hookName": "dispatcher",
+        "kind": "observed",
+        "decision": "observed",
+        "hookEventName": "SessionEnd",
+        "sessionId": "fixture-id-11",
+        "context": {
+          "hookProject": "/fixture/codex-project",
+          "cwd": "/fixture/codex-project",
+          "transcriptPath": "/fixture/codex-home/sessions/2026/10/06/rollout-2026-10-06T16-53-32-fixture-id-11.jsonl",
+          "agentId": null,
+          "hookTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "workingTree": {
+            "repositoryId": "local:e23e50f8cbe002f5db7b8637",
+            "repositoryLabel": "codex-project",
+            "checkout": "/fixture/codex-project",
+            "git": false,
+            "branch": null,
+            "commit": null,
+            "detached": false
+          },
+          "targets": []
+        }
+      }
+    ]
+  }
+]

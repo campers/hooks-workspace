@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-06T08:53:34.807Z",
+  "evidence": "Actual CLIs and native command hooks with a scripted loopback model API",
+  "remoteModelRequests": 0,
+  "scope": [
+    "SessionStart",
+    "UserPromptSubmit",
+    "PreToolUse",
+    "PostToolUse",
+    "Stop",
+    "SessionEnd"
+  ],
+  "assertions": [
+    "full eight-event Codex and ten-event Claude configurations accepted",
+    "denied sentinel absent",
+    "allowed sentinel present",
+    "PostToolUse observed",
+    "Stop continuation caused another model request",
+    "saved session appears in catalog",
+    "persisted transcript contains completed tool output",
+    "SessionEnd context recorded"
+  ],
+  "codexHookTrustBypassedInOwnedFixture": true,
+  "claudePermissionMode": "default; Bash explicitly permitted only in disposable project",
+  "sanitization": [
+    "Temporary roots and executable paths replaced",
+    "Identifiers mapped consistently",
+    "Encoded transcript project path removed"
+  ],
+  "fileDigests": {
+    "native-lifecycle.json": "8cc1d287b6dca9b142f9e25962bd258222729a1c794ce8c2c552c0bb6dcad667"
+  }
+}
